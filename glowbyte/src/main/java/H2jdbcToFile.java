@@ -11,9 +11,9 @@ public class H2jdbcToFile {
     static final String USER = "sa";
     static final String PASS = "";
 
-    public static void main(String[] args) throws Exception {
-        Connection conn = null;
-        Statement stmt = null;
+    public static void main(String[] args) {
+        Connection conn;
+        Statement stmt;
         try{
             // Регистрация JDBC драйвера
             Class.forName(JDBC_DRIVER);
@@ -73,23 +73,10 @@ public class H2jdbcToFile {
             stmt.close();
             conn.close();
             System.out.println("Отключение от базы данных");
-        }catch (SQLException se) {
+        } catch (Exception se) {
             // Обработка ошибок для JDBC
             se.printStackTrace();
-        } catch (Exception e) {
-            // Обработка ошибок for Class.forName
-            e.printStackTrace();
-        } finally {
-            // Закрытие ресурсов
-            try {
-                if (stmt!=null) stmt.close();
-            } catch (SQLException se2) { }
-            try {
-                if (conn!=null) conn.close();
-            }catch (SQLException se){
-                se.printStackTrace();
-            }
-        } // end try
+        }
         System.out.println("Конец");
     }
 }
