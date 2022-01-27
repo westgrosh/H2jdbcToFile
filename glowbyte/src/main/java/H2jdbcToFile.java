@@ -58,7 +58,7 @@ public class H2jdbcToFile {
 
             // Файл для записи
             FileWriter writer = new FileWriter("file.txt");
-            // Сравниваем keySet'ы LinkedHashMap и записываем в файл
+            // Сравниваем keySet LinkedHashMap и записываем в файл
             for (String key1 : table_list.keySet()) {
                 for (String key2 : table_cols.keySet()) {
                     if (key1.equalsIgnoreCase(key2)) {
