@@ -1,2 +1,2 @@
 # H2jdbcToFile
-Project for homework
+My homework realization for GlowByte
